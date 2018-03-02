@@ -92,6 +92,9 @@ from muiapy_dll import WinWPFDriver
 driver = WinWPFDriver()
 ```
 
+# muiapy项目进阶
+- [打包ipy项目，支持简单RPC和其他语言,见 uiwpfdriver项目](https://github.com/RockFeng0/uiwpfdriver)
+
 # 微软官方，参考文档
 - [在MSDN上面，关于MUIA的详细介绍](https://docs.microsoft.com/zh-cn/dotnet/framework/ui-automation/ui-automation-fundamentals)
 - [关于MUIA的详细的实例](https://msdn.microsoft.com/zh-cn/magazine/dd483216.aspx)
