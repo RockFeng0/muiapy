@@ -86,6 +86,8 @@ print "---"
 
 - muiapy--基于微软MUIA，我这里简单封装了一下，命名工程为muiapy
 - release_version--打包成了dll，将下级目录中的包 muiapy_dll拷贝到ipy的site-packages中，就能调用 **注意使用IronPython**,如下
+- 客户端 API（UIAutomationClient.dll 和 UIAutomationTypes.dll）是一组托管代码类型，使 UI 自动化客户端应用程序可以获取有关 UI 的信息并向控件发送输入
+- UIAutomationClient.dll 和 UIAutomationTypes.dll文件，一般情况，可以在 %systemroot%\Microsoft.NET\Framework 的最新版本中可以找到
 
 ```
 from muiapy_dll import WinWPFDriver
