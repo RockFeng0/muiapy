@@ -16,6 +16,13 @@
 	我这里拿了个notepad++的安装MFC窗口，做示例
 ![](https://github.com/RockFeng0/muiapy/raw/master/pic//example.gif)
 
+# 安装部署
+```
+# 从release版本中下载muiapy_dll后，拷贝到ipy的Lib/site-packages中后，再如下调用
+from muia import WinWPFDriver
+```
+
+
 # 不多说，上代码，分析
 ```
 # example.py
