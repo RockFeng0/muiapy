@@ -1,29 +1,36 @@
-# 痛点（创建这个工程的目的）
-我们知道，在软件自动化的过程中，常常遇到一些windows弹出框，上传文件等，常用的解决方案如AutoItv3，但它**仅仅适用于 Microsoft MFC技术的window窗口，而对于Microsoft WPF技术开发的window窗口无能为力**，创建这个项目的初衷，就是，完成 Microsoft WPF窗口的识别和操作。
+## 功能简介
+1. 支持Windows MFC窗口识别及自动化操作
+2. 支持Microsoft WPF技术开发的window窗口识别及自动化操作
 
 * * *
-# 一些基本工具
+## 窗口识别工具
 
-- 关于MFC窗口，常用的是auitv3的识别窗口工具   ![](https://github.com/RockFeng0/muiapy/raw/master/pic//20170421171813163.png)
+- 关于MFC窗口，常用的是auitv3的识别窗口工具   
 
-- 现在我们要用这个了， UISpy 用于定位 UI，支持WPF和MFC，但是它适用于Microsoft UI 自动化(简称 MUIA) ![](https://github.com/RockFeng0/muiapy/raw/master/pic//20170421171813164.png)
+![pic/20170421171813163.png](./pic/20170421171813163.png)
 
-# UiSpy工具的用法
+- UISpy 用于定位 UI，支持WPF和MFC，但是它适用于Microsoft UI 自动化(简称 MUIA) 
+
+![pic/20170421171813164.png](./pic/20170421171813164.png)
+
+### UiSpy工具的用法
 	1. 确保机器上安装了 Microsoft .NET 3.0 Framework以上的版本，就像java的jdk和jre一样，这是微软的工作环境
 	2. 打开UIspy，然后可以按住Ctrl键，移动鼠标到WPF的UI上，然后可以从UISpy上面的右边的Properties窗口查看AutomationElement	
 	
-# 效果
-	我这里拿了个notepad++的安装MFC窗口，做示例
-![](https://github.com/RockFeng0/muiapy/raw/master/pic//example.gif)
 
-# 安装部署
+## 安装部署
 ```
 # 从release版本中下载muiapy_dll后，拷贝到ipy的Lib/site-packages中后，再如下调用
 from muia import WinWPFDriver
 ```
 
+## 示例代码
 
-# 不多说，上代码，分析
+示例： notepad++的安装程序的自动化
+
+- 寻找UI
+- 执行UI事件
+
 ```
 # example.py
 # encoding:utf-8
@@ -83,13 +90,12 @@ exit_win = title2_win.find_element_by_children(Name = window_title2, ControlType
 exit_win.find_element(Name = u"是(Y)").mouse_click()
 print "---"
 ```
+	
+![pic/example.gif](./pic/example.gif)
 
-# 整个过程，主要两个过程
-1. 寻找UI		
-2. 执行UI事件
 
-# 目录结构
-![](https://github.com/RockFeng0/muiapy/raw/master/pic//20170421171813165.png)
+## 目录结构
+![pic/20170421171813165.png](./pic/20170421171813165.png)
 
 - muiapy--基于微软MUIA，我这里简单封装了一下，命名工程为muiapy
 - release_version--打包成了dll，将下级目录中的包 muiapy_dll拷贝到ipy的site-packages中，就能调用 **注意使用IronPython**,如下
@@ -101,10 +107,10 @@ from muiapy_dll import WinWPFDriver
 driver = WinWPFDriver()
 ```
 
-# muiapy项目进阶
+## muiapy项目进阶
 - [打包ipy项目，支持简单RPC和其他语言,见 uiwpfdriver项目](https://github.com/RockFeng0/uiwpfdriver)
 
-# 微软官方，参考文档
+## 微软官方，参考文档
 - [在MSDN上面，关于MUIA的详细介绍](https://docs.microsoft.com/zh-cn/dotnet/framework/ui-automation/ui-automation-fundamentals)
 - [关于MUIA的详细的实例](https://msdn.microsoft.com/zh-cn/magazine/dd483216.aspx)
 
